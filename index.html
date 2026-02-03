@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <title>AMBASRENG | Baso Goreng Renyah</title>
 
-    <!-- WAJIB MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- ================= SPLASH SCREEN ================= -->
+<!-- ================= SPLASH ================= -->
 <div id="splash">
     <div class="splash-content">
         <h1 class="logo">AMBASRENG 🔥</h1>
@@ -52,14 +50,13 @@
     </a>
 </section>
 
-<!-- ================= PRODUK ================= -->
 <section class="produk animate" id="produk">
     <h2>Produk Kami</h2>
 
     <div class="produk-grid">
 
         <div class="card">
-            <img src="assets/img/basreng-original.png" alt="Basreng Original">
+            <img src="assets/img/basreng-original.png">
             <h3>Basreng Original</h3>
             <p>Gurih dan renyah</p>
             <span>Rp 5.000</span><br><br>
@@ -71,7 +68,7 @@
 
         <div class="card">
             <span class="badge">HOT 🔥</span>
-            <img src="assets/img/basreng-pedas.png" alt="Basreng Pedas">
+            <img src="assets/img/basreng-pedas.png">
             <h3>Basreng Pedas</h3>
             <p>Pedas nampol bikin nagih</p>
             <span>Rp 5.000</span><br><br>
@@ -94,10 +91,9 @@
     <div class="founder-card">
         <img src="assets/img/founder.png"
              class="founder-img"
-             alt="Founder"
              onclick="openModal()">
         <h3>Fadil Hanif Diswanto</h3>
-        <p class="quote">"Basreng enak itu soal rasa & niat."</p>
+        <p>"Basreng enak itu soal rasa & niat."</p>
     </div>
 </section>
 
@@ -119,7 +115,6 @@
 <div id="imgModal" onclick="closeModal()">
     <img id="modalImg" onclick="event.stopPropagation()">
 </div>
-
 
 <!-- ================= SCRIPT ================= -->
 <script>
@@ -160,7 +155,6 @@ splash.addEventListener("click", () => {
 setTimeout(closeSplash, 3500);
 
 /* MODAL */
-<script>
 function openModal() {
     const modal = document.getElementById("imgModal");
     const img = document.getElementById("modalImg");
@@ -174,8 +168,6 @@ function closeModal() {
     document.getElementById("imgModal").style.display = "none";
     document.body.classList.remove("modal-open");
 }
-</script>
-
 
 /* SCROLL ANIMATION */
 const elements = document.querySelectorAll(".animate");
@@ -192,6 +184,3 @@ elements.forEach(el => observer.observe(el));
 
 </body>
 </html>
-
-
-
