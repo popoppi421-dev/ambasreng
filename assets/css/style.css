@@ -100,7 +100,7 @@ nav a {
     margin-bottom: 40px;
 }
 
-.produk .produk-grid {
+.produk-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 36px;
@@ -145,6 +145,7 @@ nav a {
     border-radius: 20px;
     font-size: 12px;
     animation: pulse 1.2s infinite;
+    z-index: 5;
 }
 
 @keyframes pulse {
@@ -183,6 +184,7 @@ nav a {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 16px;
+    cursor: pointer;
 }
 
 /* ================= FOOTER ================= */
@@ -211,6 +213,30 @@ footer {
 
 #typing {
     font-size: 20px;
+}
+
+/* ================= MODAL FOTO ================= */
+#imgModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+#imgModal img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 16px;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 /* ================= ANIMATION ================= */
@@ -245,7 +271,7 @@ footer {
         padding: 50px 16px;
     }
 
-    .produk .produk-grid {
+    .produk-grid {
         grid-template-columns: 1fr;
     }
 
@@ -266,15 +292,4 @@ footer {
     #typing {
         font-size: 16px;
     }
-    .founder-img {
-    cursor: pointer;
-    position: relative;
-    z-index: 10;
-    pointer-events: auto;
 }
-#imgModal {
-    z-index: 999999;
-}
-
-}
-
