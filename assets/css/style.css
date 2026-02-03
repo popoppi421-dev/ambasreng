@@ -19,7 +19,7 @@ body {
         linear-gradient(180deg, #fff5f0, #ffffff);
 }
 
-/* ================= HD CONTAINER ================= */
+/* ================= CONTAINER ================= */
 #mainContent {
     max-width: 1400px;
     margin: auto;
@@ -30,14 +30,18 @@ header {
     background-color: #d62828;
     color: white;
     text-align: center;
-    padding: 28px;
+    padding: 26px 20px;
 }
 
 header h1 {
     font-size: 3rem;
 }
 
-/* ================= NAVBAR ================= */
+header p {
+    font-size: 1rem;
+}
+
+/* ================= NAV ================= */
 nav {
     background-color: #f77f00;
     text-align: center;
@@ -51,26 +55,21 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
 /* ================= HERO ================= */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 70px 20px;
 }
 
 .hero h2 {
     color: #d62828;
-    font-size: 2.6rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
     max-width: 720px;
-    margin: auto;
+    margin: 12px auto;
+    font-size: 1.15rem;
 }
 
 /* ================= BUTTON ================= */
@@ -80,152 +79,110 @@ nav a:hover {
     background-color: #d62828;
     color: white;
     padding: 12px 26px;
-    text-decoration: none;
     border-radius: 10px;
-    transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background-color: #a4161a;
-    transform: scale(1.08);
+    transform: scale(1.06);
 }
 
 /* ================= PRODUK ================= */
 .produk {
     padding: 80px 20px;
     text-align: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
 }
 
+.produk h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.produk .produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 36px;
+}
+
+/* ================= CARD ================= */
 .card {
-    background-color: white;
-    padding: 24px;
+    background: white;
+    padding: 22px;
     border-radius: 20px;
-    box-shadow: 0 14px 30px rgba(0,0,0,0.14);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.14);
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 36px rgba(0,0,0,0.22);
+    transform: translateY(-10px);
 }
 
 .card img {
     width: 100%;
     border-radius: 14px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.card:hover img {
-    transform: scale(1.08);
 }
 
 .card h3 {
-    margin: 14px 0 6px;
-    font-size: 20px;
+    margin-top: 14px;
 }
 
 .card span {
     color: #d62828;
     font-weight: bold;
-    font-size: 16px;
 }
 
-/* ================= BADGE HOT ================= */
+/* ================= BADGE ================= */
 .badge {
     position: absolute;
-    top: -12px;
-    left: -12px;
-    padding: 6px 16px;
-    font-size: 12px;
-    font-weight: 800;
+    top: -10px;
+    left: -10px;
+    background: linear-gradient(135deg, red, orange);
+    color: white;
+    padding: 6px 14px;
     border-radius: 20px;
-    color: #fff;
-    background: linear-gradient(135deg, #ff0000, #ff8c00);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-    animation: hotPulse 1.2s infinite;
-    z-index: 20;
+    font-size: 12px;
+    animation: pulse 1.2s infinite;
 }
 
-@keyframes hotPulse {
-    0% { transform: scale(1); }
+@keyframes pulse {
     50% { transform: scale(1.15); }
-    100% { transform: scale(1); }
 }
 
-/* ================= TENTANG & KONTAK ================= */
+/* ================= SECTION ================= */
 .tentang, .kontak {
     padding: 80px 20px;
     text-align: center;
-    background: #fff;
+    background: white;
 }
 
 .tentang h2, .kontak h2 {
     color: #d62828;
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-}
-
-.tentang p, .kontak p {
-    max-width: 700px;
-    margin: 10px auto;
-    line-height: 1.8;
-    font-size: 1.05rem;
+    margin-bottom: 16px;
 }
 
 /* ================= FOUNDER ================= */
 .founder {
-    text-align: center;
     margin: 100px auto;
-}
-
-.founder h2 {
-    color: #d60000;
-    margin-bottom: 35px;
-    font-size: 28px;
+    text-align: center;
 }
 
 .founder-card {
     background: #fff4f4;
     max-width: 420px;
-    padding: 36px;
-    border-radius: 20px;
     margin: auto;
-    box-shadow: 0 14px 32px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.founder-card:hover {
-    transform: translateY(-8px);
+    padding: 34px;
+    border-radius: 20px;
 }
 
 .founder-img {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
-}
-
-.founder-card h3 {
-    font-size: 20px;
-    margin-bottom: 6px;
-}
-
-.founder-card p {
-    font-size: 15px;
-    color: #555;
-}
-
-.founder-card .quote {
-    font-style: italic;
-    font-size: 14px;
-    margin-top: 14px;
-    color: #777;
+    margin-bottom: 16px;
 }
 
 /* ================= FOOTER ================= */
@@ -233,39 +190,14 @@ footer {
     background: linear-gradient(135deg, #d62828, #f77f00);
     color: white;
     text-align: center;
-    padding: 18px;
+    padding: 16px;
 }
 
-/* ================= MODAL ================= */
-.modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-}
-
-.modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 14px;
-    animation: zoom 0.3s ease;
-}
-
-@keyframes zoom {
-    from { transform: scale(0.7); }
-    to { transform: scale(1); }
-}
-
-/* ================= SPLASH SCREEN ================= */
+/* ================= SPLASH ================= */
 #splash {
     position: fixed;
     inset: 0;
-    background: linear-gradient(-45deg, #d62828, #f77f00, #d62828);
-    background-size: 400% 400%;
-    animation: gradientMove 6s ease infinite;
+    background: linear-gradient(-45deg, #d62828, #f77f00);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -274,21 +206,18 @@ footer {
 }
 
 .logo {
-    font-size: 52px;
-    letter-spacing: 4px;
+    font-size: 48px;
 }
 
 #typing {
-    font-size: 22px;
-    border-right: 2px solid white;
-    padding-right: 6px;
+    font-size: 20px;
 }
 
-/* ================= SCROLL ANIMATION ================= */
+/* ================= ANIMATION ================= */
 .animate {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.8s ease;
+    transition: 0.8s;
 }
 
 .animate.show {
@@ -296,60 +225,33 @@ footer {
     transform: translateY(0);
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.3rem;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    #mainContent {
-        padding: 0 20px;
-    }
-}
 /* ================= RESPONSIVE MOBILE ================= */
 @media (max-width: 768px) {
 
-    nav {
-        font-size: 14px;
-        padding: 8px;
+    header h1 {
+        font-size: 2.2rem;
     }
 
     nav a {
         margin: 0 6px;
-    }
-
-    .hero {
-        padding: 40px 16px;
+        font-size: 14px;
     }
 
     .hero h2 {
-        font-size: 22px;
+        font-size: 1.8rem;
     }
 
     .produk {
-        padding: 40px 16px;
+        padding: 50px 16px;
     }
 
-    /* CARD PRODUK JADI FULL WIDTH */
+    .produk .produk-grid {
+        grid-template-columns: 1fr;
+    }
+
     .card {
-        width: 100%;
         max-width: 340px;
-        margin: 16px auto;
-        display: block;
-    }
-
-    .card img {
-        width: 100%;
-        height: auto;
-    }
-
-    /* FOUNDER */
-    .founder-card {
-        width: 90%;
+        margin: auto;
     }
 
     .founder-img {
@@ -357,26 +259,11 @@ footer {
         height: 110px;
     }
 
-    /* TEXT */
-    h1 {
-        font-size: 26px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    /* SPLASH */
     .logo {
-        font-size: 36px;
+        font-size: 34px;
     }
 
     #typing {
         font-size: 16px;
     }
 }
-
