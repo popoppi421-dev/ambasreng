@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Ambasreng | Baso Goreng Renyah</title>
+
+    <!-- WAJIB UNTUK HP -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -51,7 +56,7 @@
     <h2>Produk Kami</h2>
 
     <div class="card">
-        <img src="assets/img/basreng-original.png">
+        <img src="assets/img/basreng-original.png" alt="Basreng Original">
         <h3>Basreng Original</h3>
         <p>Gurih dan renyah</p>
         <span>Rp 5.000</span><br><br>
@@ -62,8 +67,8 @@
     </div>
 
     <div class="card">
-        <span class="badge hot">HOT 🔥</span>
-        <img src="assets/img/basreng-pedas.png">
+        <span class="badge">HOT 🔥</span>
+        <img src="assets/img/basreng-pedas.png" alt="Basreng Pedas">
         <h3>Basreng Pedas</h3>
         <p>Pedas nampol bikin nagih</p>
         <span>Rp 5.000</span><br><br>
@@ -82,7 +87,7 @@
 <section class="founder animate">
     <h2>Founder AMBASRENG</h2>
     <div class="founder-card">
-        <img src="assets/img/founder.png" class="founder-img" onclick="openModal()">
+        <img src="assets/img/founder.png" class="founder-img" onclick="openModal()" alt="Founder">
         <h3>Fadil Hanif Diswanto</h3>
         <p class="quote">"Basreng enak itu soal rasa & niat."</p>
     </div>
@@ -158,11 +163,13 @@ function closeModal() {
     document.getElementById("imgModal").style.display = "none";
 }
 
-/* SCROLL */
+/* SCROLL ANIMATION */
 const elements = document.querySelectorAll(".animate");
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
     });
 }, { threshold: 0.2 });
 
