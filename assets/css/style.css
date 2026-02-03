@@ -292,4 +292,31 @@ footer {
     #typing {
         font-size: 16px;
     }
+    /* ===== FIX MODAL BUG MOBILE ===== */
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
+
+/* modal wajib full layar */
+#imgModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+/* foto modal */
+#imgModal img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+}
+
