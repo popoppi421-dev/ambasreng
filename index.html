@@ -116,9 +116,10 @@
 </div>
 
 <!-- ================= MODAL ================= -->
-<div id="imgModal" class="modal" onclick="closeModal()">
-    <img class="modal-content" id="modalImg">
+<div id="imgModal" onclick="closeModal()">
+    <img id="modalImg" onclick="event.stopPropagation()">
 </div>
+
 
 <!-- ================= SCRIPT ================= -->
 <script>
@@ -191,5 +192,6 @@ elements.forEach(el => observer.observe(el));
 
 </body>
 </html>
+
 
 
