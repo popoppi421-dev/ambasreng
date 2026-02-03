@@ -266,4 +266,15 @@ footer {
     #typing {
         font-size: 16px;
     }
+    .founder-img {
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
+#imgModal {
+    z-index: 999999;
+}
+
+}
+
