@@ -2,9 +2,9 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Ambasreng | Baso Goreng Renyah</title>
+    <title>AMBASRENG | Baso Goreng Renyah</title>
 
-    <!-- WAJIB UNTUK HP -->
+    <!-- WAJIB MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
@@ -15,7 +15,7 @@
 <!-- ================= SPLASH SCREEN ================= -->
 <div id="splash">
     <div class="splash-content">
-        <h1 class="logo">AMBASRENG <span class="fire">🔥</span></h1>
+        <h1 class="logo">AMBASRENG 🔥</h1>
         <p id="typing"></p>
         <small>(klik untuk masuk)</small>
     </div>
@@ -29,7 +29,7 @@
     </audio>
 </div>
 
-<!-- ================= MAIN CONTENT ================= -->
+<!-- ================= MAIN ================= -->
 <div id="mainContent">
 
 <header class="animate">
@@ -47,35 +47,40 @@
 <section class="hero animate" id="beranda">
     <h2>Basreng Favorit 🔥</h2>
     <p>Dibuat dari bahan pilihan, renyah, dan bumbu meresap.</p>
-    <a href="https://wa.me/6285280053384" class="btn" target="_blank">
+    <a href="https://wa.me/6285280053384" target="_blank" class="btn">
         Pesan Sekarang
     </a>
 </section>
 
+<!-- ================= PRODUK ================= -->
 <section class="produk animate" id="produk">
     <h2>Produk Kami</h2>
 
-    <div class="card">
-        <img src="assets/img/basreng-original.png" alt="Basreng Original">
-        <h3>Basreng Original</h3>
-        <p>Gurih dan renyah</p>
-        <span>Rp 5.000</span><br><br>
-        <a class="btn" target="_blank"
-           href="https://wa.me/6285280053384?text=Halo%20AMBASRENG%20🍘%0ASaya%20mau%20pesan%20Basreng%20Original">
-           Pesan
-        </a>
-    </div>
+    <div class="produk-grid">
 
-    <div class="card">
-        <span class="badge">HOT 🔥</span>
-        <img src="assets/img/basreng-pedas.png" alt="Basreng Pedas">
-        <h3>Basreng Pedas</h3>
-        <p>Pedas nampol bikin nagih</p>
-        <span>Rp 5.000</span><br><br>
-        <a class="btn" target="_blank"
-           href="https://wa.me/6285280053384?text=Halo%20AMBASRENG%20🔥%0ASaya%20mau%20pesan%20Basreng%20Pedas">
-           Pesan
-        </a>
+        <div class="card">
+            <img src="assets/img/basreng-original.png" alt="Basreng Original">
+            <h3>Basreng Original</h3>
+            <p>Gurih dan renyah</p>
+            <span>Rp 5.000</span><br><br>
+            <a class="btn" target="_blank"
+               href="https://wa.me/6285280053384?text=Halo%20AMBASRENG%20🍘%0ASaya%20mau%20pesan%20Basreng%20Original">
+               Pesan
+            </a>
+        </div>
+
+        <div class="card">
+            <span class="badge">HOT 🔥</span>
+            <img src="assets/img/basreng-pedas.png" alt="Basreng Pedas">
+            <h3>Basreng Pedas</h3>
+            <p>Pedas nampol bikin nagih</p>
+            <span>Rp 5.000</span><br><br>
+            <a class="btn" target="_blank"
+               href="https://wa.me/6285280053384?text=Halo%20AMBASRENG%20🔥%0ASaya%20mau%20pesan%20Basreng%20Pedas">
+               Pesan
+            </a>
+        </div>
+
     </div>
 </section>
 
@@ -87,7 +92,10 @@
 <section class="founder animate">
     <h2>Founder AMBASRENG</h2>
     <div class="founder-card">
-        <img src="assets/img/founder.png" class="founder-img" onclick="openModal()" alt="Founder">
+        <img src="assets/img/founder.png"
+             class="founder-img"
+             alt="Founder"
+             onclick="openModal()">
         <h3>Fadil Hanif Diswanto</h3>
         <p class="quote">"Basreng enak itu soal rasa & niat."</p>
     </div>
@@ -95,7 +103,7 @@
 
 <section class="kontak animate" id="kontak">
     <h2>Hubungi Kami</h2>
-    <a href="https://wa.me/6285280053384" class="btn" target="_blank">
+    <a href="https://wa.me/6285280053384" target="_blank" class="btn">
         WhatsApp Founder
     </a>
     <p>📞 0852-8005-3384</p>
@@ -107,22 +115,17 @@
 
 </div>
 
-<!-- ================= MODAL FOTO ================= -->
+<!-- ================= MODAL ================= -->
 <div id="imgModal" class="modal" onclick="closeModal()">
     <img class="modal-content" id="modalImg">
 </div>
 
 <!-- ================= SCRIPT ================= -->
 <script>
+/* TYPING */
 const text = "Baso Goreng Renyah & Pedas Nampol";
 let i = 0;
-
 const typing = document.getElementById("typing");
-const splash = document.getElementById("splash");
-const main = document.getElementById("mainContent");
-
-const whoosh = document.getElementById("soundWhoosh");
-const enter = document.getElementById("soundEnter");
 
 function typeEffect() {
     if (i < text.length) {
@@ -133,17 +136,19 @@ function typeEffect() {
 }
 typeEffect();
 
-function closeSplash() {
-    splash.classList.add("fade-out");
+/* SPLASH */
+const splash = document.getElementById("splash");
+const main = document.getElementById("mainContent");
+const whoosh = document.getElementById("soundWhoosh");
+const enter = document.getElementById("soundEnter");
 
+function closeSplash() {
+    splash.style.opacity = "0";
     setTimeout(() => {
         enter.play().catch(()=>{});
-    }, 300);
-
-    setTimeout(() => {
         splash.style.display = "none";
         main.classList.add("show");
-    }, 800);
+    }, 600);
 }
 
 splash.addEventListener("click", () => {
@@ -158,7 +163,6 @@ function openModal() {
     document.getElementById("imgModal").style.display = "flex";
     document.getElementById("modalImg").src = "assets/img/founder.png";
 }
-
 function closeModal() {
     document.getElementById("imgModal").style.display = "none";
 }
@@ -178,3 +182,4 @@ elements.forEach(el => observer.observe(el));
 
 </body>
 </html>
+
