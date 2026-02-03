@@ -19,10 +19,15 @@ body {
         linear-gradient(180deg, #fff5f0, #ffffff);
 }
 
-/* ================= CONTAINER ================= */
+/* ================= MAIN ================= */
 #mainContent {
     max-width: 1400px;
     margin: auto;
+    display: none;
+}
+
+#mainContent.show {
+    display: block;
 }
 
 /* ================= HEADER ================= */
@@ -30,15 +35,15 @@ header {
     background-color: #d62828;
     color: white;
     text-align: center;
-    padding: 26px 20px;
+    padding: 30px 20px;
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
 }
 
 header p {
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 /* ================= NAV ================= */
@@ -58,28 +63,28 @@ nav a {
 /* ================= HERO ================= */
 .hero {
     text-align: center;
-    padding: 70px 20px;
+    padding: 80px 20px;
 }
 
 .hero h2 {
     color: #d62828;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
 }
 
 .hero p {
     max-width: 720px;
-    margin: 12px auto;
+    margin: 14px auto;
     font-size: 1.15rem;
 }
 
 /* ================= BUTTON ================= */
 .btn {
     display: inline-block;
-    margin-top: 18px;
+    margin-top: 20px;
     background-color: #d62828;
     color: white;
-    padding: 12px 26px;
-    border-radius: 10px;
+    padding: 14px 30px;
+    border-radius: 12px;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -91,27 +96,27 @@ nav a {
 
 /* ================= PRODUK ================= */
 .produk {
-    padding: 80px 20px;
+    padding: 90px 20px;
     text-align: center;
 }
 
 .produk h2 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     margin-bottom: 40px;
 }
 
 .produk-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 36px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
 /* ================= CARD ================= */
 .card {
     background: white;
-    padding: 22px;
-    border-radius: 20px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.14);
+    padding: 24px;
+    border-radius: 22px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.15);
     position: relative;
     transition: 0.3s;
 }
@@ -122,11 +127,11 @@ nav a {
 
 .card img {
     width: 100%;
-    border-radius: 14px;
+    border-radius: 16px;
 }
 
 .card h3 {
-    margin-top: 14px;
+    margin-top: 16px;
 }
 
 .card span {
@@ -145,7 +150,6 @@ nav a {
     border-radius: 20px;
     font-size: 12px;
     animation: pulse 1.2s infinite;
-    z-index: 5;
 }
 
 @keyframes pulse {
@@ -154,7 +158,7 @@ nav a {
 
 /* ================= SECTION ================= */
 .tentang, .kontak {
-    padding: 80px 20px;
+    padding: 90px 20px;
     text-align: center;
     background: white;
 }
@@ -172,19 +176,24 @@ nav a {
 
 .founder-card {
     background: #fff4f4;
-    max-width: 420px;
+    max-width: 440px;
     margin: auto;
-    padding: 34px;
-    border-radius: 20px;
+    padding: 36px;
+    border-radius: 22px;
 }
 
 .founder-img {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 16px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.founder-img:hover {
+    transform: scale(1.05);
 }
 
 /* ================= FOOTER ================= */
@@ -192,7 +201,7 @@ footer {
     background: linear-gradient(135deg, #d62828, #f77f00);
     color: white;
     text-align: center;
-    padding: 16px;
+    padding: 18px;
 }
 
 /* ================= SPLASH ================= */
@@ -216,6 +225,10 @@ footer {
 }
 
 /* ================= MODAL FOTO ================= */
+body.modal-open {
+    overflow: hidden;
+}
+
 #imgModal {
     position: fixed;
     inset: 0;
@@ -251,11 +264,11 @@ footer {
     transform: translateY(0);
 }
 
-/* ================= RESPONSIVE MOBILE ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
 
     header h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
     }
 
     nav a {
@@ -264,11 +277,11 @@ footer {
     }
 
     .hero h2 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 
     .produk {
-        padding: 50px 16px;
+        padding: 60px 16px;
     }
 
     .produk-grid {
@@ -276,47 +289,20 @@ footer {
     }
 
     .card {
-        max-width: 340px;
+        max-width: 360px;
         margin: auto;
     }
 
     .founder-img {
-        width: 110px;
-        height: 110px;
+        width: 130px;
+        height: 130px;
     }
 
     .logo {
-        font-size: 34px;
+        font-size: 36px;
     }
 
     #typing {
         font-size: 16px;
     }
-    /* ===== FIX MODAL BUG MOBILE ===== */
-body.modal-open {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
 }
-
-/* modal wajib full layar */
-#imgModal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-}
-
-/* foto modal */
-#imgModal img {
-    max-width: 90vw;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 16px;
-}
-
-}
-
