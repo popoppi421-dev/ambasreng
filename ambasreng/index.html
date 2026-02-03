@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Ambasreng | Baso Goreng Renyah</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ================= SPLASH SCREEN ================= -->
+<div id="splash">
+    <div class="splash-content">
+        <h1 class="logo">AMBASRENG <span class="fire">🔥</span></h1>
+        <p id="typing"></p>
+        <small>(klik untuk masuk)</small>
+    </div>
+
+    <audio id="soundWhoosh">
+        <source src="assets/sound/whoosh.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="soundEnter">
+        <source src="assets/sound/enter.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div id="mainContent">
+
+<header class="animate">
+    <h1>AMBASRENG</h1>
+    <p>Baso Goreng Renyah & Pedas Nampol</p>
+</header>
+
+<nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#produk">Produk</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<section class="hero animate" id="beranda">
+    <h2>Basreng Favorit 🔥</h2>
+    <p>Dibuat dari bahan pilihan, renyah, dan bumbu meresap.</p>
+    <a href="https://wa.me/6285280053384" class="btn" target="_blank">
+        Pesan Sekarang
+    </a>
+</section>
+
+<section class="produk animate" id="produk">
+    <h2>Produk Kami</h2>
+
+    <div class="card">
+        <img src="assets/img/basreng-original.png">
+        <h3>Basreng Original</h3>
+        <p>Gurih dan renyah</p>
+        <span>Rp 5.000</span><br><br>
+        <a class="btn" target="_blank"
+           href="https://wa.me/6285280053384?text=Halo%20AMBASRENG%20🍘%0ASaya%20mau%20pesan%20Basreng%20Original">
+           Pesan
+        </a>
+    </div>
+
+    <div class="card">
+        <span class="badge hot">HOT 🔥</span>
+        <img src="assets/img/basreng-pedas.png">
+        <h3>Basreng Pedas</h3>
+        <p>Pedas nampol bikin nagih</p>
+        <span>Rp 5.000</span><br><br>
+        <a class="btn" target="_blank"
+           href="https://wa.me/6285280053384?text=Halo%20AMBASRENG%20🔥%0ASaya%20mau%20pesan%20Basreng%20Pedas">
+           Pesan
+        </a>
+    </div>
+</section>
+
+<section class="tentang animate" id="tentang">
+    <h2>Tentang AMBASRENG</h2>
+    <p>Usaha baso goreng rumahan dengan bahan pilihan & cita rasa khas.</p>
+</section>
+
+<section class="founder animate">
+    <h2>Founder AMBASRENG</h2>
+    <div class="founder-card">
+        <img src="assets/img/founder.png" class="founder-img" onclick="openModal()">
+        <h3>Fadil Hanif Diswanto</h3>
+        <p class="quote">"Basreng enak itu soal rasa & niat."</p>
+    </div>
+</section>
+
+<section class="kontak animate" id="kontak">
+    <h2>Hubungi Kami</h2>
+    <a href="https://wa.me/6285280053384" class="btn" target="_blank">
+        WhatsApp Founder
+    </a>
+    <p>📞 0852-8005-3384</p>
+</section>
+
+<footer class="animate">
+    <p>© 2025 AMBASRENG</p>
+</footer>
+
+</div>
+
+<!-- ================= MODAL FOTO ================= -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+    <img class="modal-content" id="modalImg">
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+const text = "Baso Goreng Renyah & Pedas Nampol";
+let i = 0;
+
+const typing = document.getElementById("typing");
+const splash = document.getElementById("splash");
+const main = document.getElementById("mainContent");
+
+const whoosh = document.getElementById("soundWhoosh");
+const enter = document.getElementById("soundEnter");
+
+function typeEffect() {
+    if (i < text.length) {
+        typing.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 45);
+    }
+}
+typeEffect();
+
+function closeSplash() {
+    splash.classList.add("fade-out");
+
+    setTimeout(() => {
+        enter.play().catch(()=>{});
+    }, 300);
+
+    setTimeout(() => {
+        splash.style.display = "none";
+        main.classList.add("show");
+    }, 800);
+}
+
+splash.addEventListener("click", () => {
+    whoosh.play().catch(()=>{});
+    closeSplash();
+});
+
+setTimeout(closeSplash, 3500);
+
+/* MODAL */
+function openModal() {
+    document.getElementById("imgModal").style.display = "flex";
+    document.getElementById("modalImg").src = "assets/img/founder.png";
+}
+
+function closeModal() {
+    document.getElementById("imgModal").style.display = "none";
+}
+
+/* SCROLL */
+const elements = document.querySelectorAll(".animate");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+}, { threshold: 0.2 });
+
+elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
