@@ -159,13 +159,22 @@ splash.addEventListener("click", () => {
 setTimeout(closeSplash, 3500);
 
 /* MODAL */
+<script>
 function openModal() {
-    document.getElementById("imgModal").style.display = "flex";
-    document.getElementById("modalImg").src = "assets/img/founder.png";
+    const modal = document.getElementById("imgModal");
+    const img = document.getElementById("modalImg");
+
+    img.src = "assets/img/founder.png";
+    modal.style.display = "flex";
+    document.body.classList.add("modal-open");
 }
+
 function closeModal() {
     document.getElementById("imgModal").style.display = "none";
+    document.body.classList.remove("modal-open");
 }
+</script>
+
 
 /* SCROLL ANIMATION */
 const elements = document.querySelectorAll(".animate");
@@ -182,4 +191,5 @@ elements.forEach(el => observer.observe(el));
 
 </body>
 </html>
+
 
